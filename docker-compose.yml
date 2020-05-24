@@ -242,11 +242,14 @@ x-cakeshop-def: &cakeshop-def
       java -Xms128M -Xmx128M -Dcakeshop.config.dir=/qdata/cakeshop -Dlogging.path=/qdata/logs/cakeshop -jar /opt/cakeshop/cakeshop.war
       ;;
 services:
+  txgenerator1:
+    build: .
   node1:
     <<: *quorum-def
     hostname: node1
     ports:
       - "22000:8545"
+      - "8546:8546"
     volumes:
       - vol1:/qdata
       - ./examples/7nodes:/examples:ro

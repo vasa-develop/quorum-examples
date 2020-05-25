@@ -242,8 +242,6 @@ x-cakeshop-def: &cakeshop-def
       java -Xms128M -Xmx128M -Dcakeshop.config.dir=/qdata/cakeshop -Dlogging.path=/qdata/logs/cakeshop -jar /opt/cakeshop/cakeshop.war
       ;;
 services:
-  txgenerator1:
-    build: .
   node1:
     <<: *quorum-def
     hostname: node1
